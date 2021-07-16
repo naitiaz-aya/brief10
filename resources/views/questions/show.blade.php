@@ -31,7 +31,7 @@
         <div class="p-2 border rounded border-1 m-4 d-flex justify-content-between">
             <h5>The Comment</h5>
             <p class="m-0">{{$response->description}}</p>
-            
+            <span>{{$response->user->name}}</span>
             @auth
                 @if(Auth::user()->role == 'admin')
                 <form action="{{ route( 'deleteResponse', ['id' => $response->id])}}" method="post">
@@ -40,7 +40,8 @@
                     <button class="btn btn-danger">❌</button>
                 </form>
                 @endif
-                @endauth
+            @endauth
+            
         </div>
         @endforeach
     </section>

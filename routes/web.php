@@ -33,7 +33,7 @@ Route::delete('/questions/{id}', [App\Http\Controllers\QuestionController::class
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('editUser')->middleware('auth');
 Route::put('/user/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('updateUser')->middleware('auth');
-Route::delete('/users/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('deleteUser')->middleware('auth');
+Route::delete('/users/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('deleteUser')->middleware('auth');
 
 Route::post('/responses', [App\Http\Controllers\ResponseController::class, 'store'])->name('storeResponse')->middleware('auth');
 Route::delete('/responses/{id}', [App\Http\Controllers\ResponseController::class, 'destroy'])->name('deleteResponse')->middleware('auth');

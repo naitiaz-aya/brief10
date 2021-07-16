@@ -17,6 +17,7 @@
             </div>
             <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                 {{$question->created_at}}
+                <span>{{$question->user->name}}</span>
                 @auth
                  @if(Auth::user()->role == 'admin')
                  <form action="/questions/{{$question->id}}" method="post">
